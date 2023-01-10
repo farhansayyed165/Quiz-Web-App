@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Oswald&family=PT+Serif:wght@700&family=Roboto+Slab&family=Titillium+Web&display=swap');
+
+/* https://coolors.co/palette/d8f3dc-b7e4c7-95d5b2-74c69d-52b788-40916c-2d6a4f-1b4332-081c15 */
+
+
+/* General settings and creating variables */
+
+button[type="submit"]{
+    display: none;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --clr-bg: #D8F3DC;
+    --clr-text: black;
+    --clr-op: #95D5B2;
+    --clr-btn: #1B4332;
+    --clr-progress:#52B788;
+}
+
+body{
+    margin: 0;
+    padding:0;
+    background: var(--clr-bg);
+    /* min-height: 90vh; */
+    min-width: 310px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header{
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+    letter-spacing: 8px;
+    font-size: 1.5rem;
+    
+}
+
+.base{
+    font-size: 1.3rem;
+    position:  relative;
+    min-height: 25em;
+    min-width: 40em;
+    background-color: white;
+    box-shadow: 5px 3px 20px rgb(0 0 0/0.2);
+    border-radius: 1%;
+    overflow: hidden;
+}
+
+.carousel-progress {
+    background: rgb(235, 235, 235);
+    
+        
+  }
+  
+.carousel-progress-bar {
+    /* margin-top: 15px; */
+    margin-bottom: 12px;
+    background: var(--clr-progress);
+    height: 10px;
+    transition: width 400ms ease;
+    width: 10px;
+}
+
+
+.AllTemplates{
+    font-size: 1.3rem;
+    position: relative;
+    height: 20em;
+    display: flex;
+    flex-direction: row;
+    transition: transform 250ms ease-in;
+
+}
+
+.Template{
+    position: absolute;
+    margin-top:40px;
+    font-size: 1.3rem;
+    min-height: 25em;
+    min-width: 39em;
+    pointer-events: none;
+    /* left:0; */
+    /* background-color: rgb(255, 197, 197); */
+}
+
+.question{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    margin: 10px;
+    margin-left:20px;
+}
+
+.options{
+    font-family: 'Lato', sans-serif;
+    width: inherit;
+    height: inherit;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    pointer-events: all;
+}
+
+.option{
+    margin-inline: 10px;
+    margin-block: 20px;
+    
+    padding-inline: 0.5em;
+   
+}
+
+
+
+li{
+    color: var(--clr-text);
+    list-style: none;
+    display: flex;
+    
+}
+
+li input[type="radio"]{
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    transition: 200ms ;
+}
+
+.option-text{
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+.option-text::before{
+    content: "";
+    width: 1em;
+    height: 1em;
+    border: 0.05em solid black;
+    border-radius: 0.2em ;
+    margin-right: 0.5em;
+    transition: color 300ms;
+}
+
+.option-text:hover::before,
+li input[type="radio"]:hover + label:before{
+    background-color: rgb(243, 243, 243);
+}
+
+li input[type="radio"]:checked + label:before{
+    content: '\002714';
+    background-color: var(--clr-btn);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+.option_footer{
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    height: 25em;
+    position: absolute;
+    pointer-events: none;
+}
+
+.btn{
+    padding: 15px;
+    margin-inline: 22px;
+    margin-bottom: 70px;
+    padding-block: 4px;
+    font-size: 15px;
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    background-color: white;
+    color: var(--clr-btn);
+    border: 2px solid var(--clr-btn);
+    cursor: pointer;
+    transition: 300ms;
+    pointer-events: all;
+    position: absolute;
+}
+
+.btn:hover{
+    background-color: var(--clr-btn);
+    color: white;
+    pointer-events:all;
+    cursor: pointer;
+}
+
+.next{
+    
+    right: 0;
+    /* padding-block: 7px; */
+
+}
+
+.previous{
+    /* position: absolute; */
+    left: 0;
+    /* padding-block: 7px; */
+}
+
+
+
+ 
+/* .ocurrent{
+    left: 0;
+}
+
+.tcurrent{
+    left: 100%;
+
+}
+
+.thcurrent{
+    left:200%;
+} */
