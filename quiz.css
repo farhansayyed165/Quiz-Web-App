@@ -5,9 +5,7 @@
 
 /* General settings and creating variables */
 
-button[type="submit"]{
-    display: none;
-}
+
 
 *{
     box-sizing: border-box;
@@ -42,15 +40,20 @@ body{
 }
 
 .base{
+    display: block;
+    transition:  display 200ms ease-in;
     font-size: 1.3rem;
     position:  relative;
-    min-height: 25em;
-    min-width: 40em;
     background-color: white;
     box-shadow: 5px 3px 20px rgb(0 0 0/0.2);
     border-radius: 1%;
     overflow: hidden;
+    min-height: 25em;
+    min-width: 40em;
+    pointer-events: none;
+    /* display: none; */
 }
+
 
 .carousel-progress {
     background: rgb(235, 235, 235);
@@ -64,7 +67,7 @@ body{
     background: var(--clr-progress);
     height: 10px;
     transition: width 400ms ease;
-    width: 10px;
+    width: 0px;
 }
 
 
@@ -76,6 +79,15 @@ body{
     flex-direction: row;
     transition: transform 250ms ease-in;
 
+}
+
+form{
+    font-size: 1.3rem;
+    position: relative;
+    height: 20em;
+    display: flex;
+    flex-direction: row;
+    transition: transform 250ms ease-in;
 }
 
 .Template{
@@ -168,6 +180,37 @@ li input[type="radio"]:checked + label:before{
 
 
 
+.startDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+}
+
+#start{
+    pointer-events: all;
+    padding: 0.5em;
+    border: none;
+    font-size: 2rem;
+    font-family: 'Lato',sans-serif;
+    letter-spacing: 0.1em;
+    border-radius: 10%;
+    background-color: var(--clr-btn);
+    color: white;
+    transition: 250ms ease-in;
+}
+#start:hover{
+    background-color: white;
+    color: var(--clr-btn);
+    border: 1px solid var(--clr-btn);
+    pointer-events:all;
+    cursor: pointer;
+    border-radius: 18%;
+}
+
+
 
 
 
@@ -177,7 +220,7 @@ li input[type="radio"]:checked + label:before{
 
 .option_footer{
     font-size: 1.3rem;
-    display: flex;
+    display: none;
     justify-content: flex-end;
     align-items: flex-end;
     width: 100%;
@@ -224,18 +267,45 @@ li input[type="radio"]:checked + label:before{
     /* padding-block: 7px; */
 }
 
+.SubmitPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+
+.Submit{
+    pointer-events: all;
+    cursor: pointer;
+    position: absolute;
+    border: none;
+    padding: 0.2em;
+    font-size: 2rem;
+    font-family: 'Lato',sans-serif;
+    letter-spacing: 0.1em;
+    border-radius: 8%;
+    background-color: var(--clr-btn);
+    color: white;
+    transition: 250ms ease-in;
+}
+
+.Submit:hover{
+    background-color: white;
+    color: var(--clr-btn);
+    border: 1px solid var(--clr-btn);
+    pointer-events:all;
+    cursor: pointer;
+    border-radius: 10%;
+}
 
  
-/* .ocurrent{
-    left: 0;
+
+
+
+
+/* Media Queries */
+@media (max-width: 860px) {
+    .base{
+        font-size: 1rem;
+    }
 }
-
-.tcurrent{
-    left: 100%;
-
-}
-
-.thcurrent{
-    left:200%;
-} */
