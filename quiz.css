@@ -233,7 +233,7 @@ li input[type="radio"]:checked + label:before{
     padding: 15px;
     margin-inline: 22px;
     margin-bottom: 70px;
-    padding-block: 4px;
+    padding-block: 7px;
     font-size: 15px;
     text-align: center;
     border: none;
@@ -245,6 +245,7 @@ li input[type="radio"]:checked + label:before{
     transition: 300ms;
     pointer-events: all;
     position: absolute;
+    align-self: flex-end;
 }
 
 .btn:hover{
@@ -252,7 +253,9 @@ li input[type="radio"]:checked + label:before{
     color: white;
     pointer-events:all;
     cursor: pointer;
+
 }
+
 
 .next{
     
@@ -264,15 +267,60 @@ li input[type="radio"]:checked + label:before{
 .previous{
     /* position: absolute; */
     left: 0;
-    /* padding-block: 7px; */
+
+
+}
+
+
+.confirm_container{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    font-family: "Lato", sans-serif;
+}
+.confirm{
+    padding: 15px;
+    margin-inline: 22px;
+    margin: 2em;
+    padding-block: 10px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    background-color: white;
+    color: var(--clr-btn);
+    border: 2px solid var(--clr-btn);
+    cursor: pointer;
+    transition: 300ms;
+    pointer-events: all;
+    
+}
+.confirm:hover{
+    background-color: var(--clr-btn);
+    color: white;
+    pointer-events:all;
+    cursor: pointer;
+
+}
+
+.last{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: "Lato", sans-serif;
 }
 
 .SubmitPage{
     display: flex;
     justify-content: center;
-    align-items: center;
-}
+    align-items: flex-end;
 
+    margin: 0;
+    padding: 0;
+    /* margin-left: 1em; */
+}
 
 .Submit{
     pointer-events: all;
@@ -283,19 +331,30 @@ li input[type="radio"]:checked + label:before{
     font-size: 2rem;
     font-family: 'Lato',sans-serif;
     letter-spacing: 0.1em;
-    border-radius: 8%;
-    background-color: var(--clr-btn);
-    color: white;
-    transition: 250ms ease-in;
+    bottom: 0;
+    background-color: white;
+    color: var(--clr-btn);
+    transition: 500ms linear;
+    width: 120%;
+    border: 1px solid var(--clr-btn);
+    margin-bottom: 70px;
+}
+
+.Submit[visible="false"]{
+    pointer-events: none;
+    opacity: 0;
+}
+
+.Submit[visible="true"]{
+    pointer-events: all;
+    opacity: 1;
 }
 
 .Submit:hover{
-    background-color: white;
-    color: var(--clr-btn);
-    border: 1px solid var(--clr-btn);
+    background-color: var(--clr-btn);
+    color: white;
     pointer-events:all;
     cursor: pointer;
-    border-radius: 10%;
 }
 
  

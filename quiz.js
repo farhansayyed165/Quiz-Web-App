@@ -6,6 +6,8 @@ const next = document.querySelector('.next');
 const prev = document.querySelector('.previous');
 const submit = document.querySelector('.Submit');
 const form = document.querySelector("#form");
+const yes = document.querySelector(".yes")
+const no = document.querySelector(".no")
 
 const start = document.querySelector(".startDiv");
 const startButton = document.getElementById("start");
@@ -87,6 +89,7 @@ next.addEventListener('click',e=>{
         progress.style.width = baseWidth+'px';
         next.style.display = 'none';
         console.log(baseWidth);
+        // submit.setAttribute("visible","true");
     }
     if(currentSlide === firstSlide){
         let progressWidth = progress.offsetWidth;
@@ -125,6 +128,21 @@ prev.addEventListener('click', e=>{
 
 })
 
+yes.addEventListener('click',()=>{
+    submit.setAttribute("visible","true");
+})
+
+no.addEventListener('click',()=>{
+    const currentSlide = track.querySelector('.current');
+    const nextSlide = currentSlide.previousElementSibling;
+    moveToSlide(track,currentSlide,nextSlide);
+
+    let progressWidth = progress.offsetWidth;
+    progress.style.width = progressWidth - addToProgress+'px';
+    next.style.display = 'inline-block';
+
+    submit.setAttribute("visible","false");
+})
 
 
 form.addEventListener("submit",submitHandle)
