@@ -88,7 +88,6 @@ next.addEventListener('click',e=>{
     if(currentSlide === lastlast){
         progress.style.width = baseWidth+'px';
         next.style.display = 'none';
-        console.log(baseWidth);
         // submit.setAttribute("visible","true");
     }
     if(currentSlide === firstSlide){
@@ -130,6 +129,9 @@ prev.addEventListener('click', e=>{
 
 yes.addEventListener('click',()=>{
     submit.setAttribute("visible","true");
+    prev.style.display = 'none';
+    yes.style.display = 'none';
+    no.innerHTML = "Go Back";
 })
 
 no.addEventListener('click',()=>{
@@ -142,6 +144,9 @@ no.addEventListener('click',()=>{
     next.style.display = 'inline-block';
 
     submit.setAttribute("visible","false");
+    prev.style.display = 'inline-block';
+    yes.style.display = 'inline-block';
+    no.innerHTML = "No";
 })
 
 
