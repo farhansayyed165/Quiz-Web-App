@@ -1,3 +1,33 @@
+const content = [
+    {question:"1. Name the lightest gas on earth.", a:"Oxygen",b:"Hydrogen",c:"Nitrogen",d:"Helium", answer:"Hydrogen"},
+    {question:"2. What is the largest desert in the world?", a:"Antarctica",b:"Sahara",c:"Arabian Desert",d:"Gobi Desert", answer:"Antarctica"},
+    {question:"3. What is a material that will not carry an electrical charge called?", a:"Conductor",b:"Semicondoctor",c:"Insulator",d:"None of the above", answer:"Insulator"},
+    {question:"4. Roughly how long does it take for the Sun’s light to reach Earth?", a:"8 Days",b:"8 Hours",c:"8 minutes",d:"8 seconds", answer:"8 minutes"},
+    {question:"5. How many bones do sharks have in their bodies?", a:"0 Bones",b:"201 Bones",c:"400 Bones",d:"98 Bones", answer:"0"}
+]
+
+const questions = document.querySelectorAll(".question");
+let index = 1;
+
+for(let i = 0;i<=(questions.length-1);i++){
+    questions[i].innerHTML = content[i].question;
+    
+    let option_a = document.getElementById("a"+index+"_text")
+    let option_b = document.getElementById("b"+index+"_text")
+    let option_c = document.getElementById("c"+index+"_text")
+    let option_d = document.getElementById("d"+index+"_text")
+    
+    index++;
+    
+    option_a.innerHTML=content[i].a
+    option_b.innerHTML=content[i].b
+    option_c.innerHTML=content[i].c
+    option_d.innerHTML=content[i].d
+}
+
+
+
+
 // Getting elements from DOM
 // (our track that contains all the questions and options, An array of individual children, next and previous button)
 const track = document.querySelector('.AllTemplates');
@@ -21,10 +51,8 @@ const base = document.querySelector('.base');
 //Calculating what width the Progress Bar will have depending on the child elements i.e. Number of Questions
 const baseWidth = base.offsetWidth;
 const addToProgress =  (baseWidth/(slides.length-1));//Important Constant we will use in the Eventlisteners
-console.log(addToProgress);
 let progressW = progress.offsetWidth;
 progress.style.width = 0+'px';
-console.log(`BaseWidth ${baseWidth}`);
 
 
 
@@ -32,7 +60,7 @@ console.log(`BaseWidth ${baseWidth}`);
 // Now, actual coding
 
 // Getting Width of the template
-let i = slides.length;
+let slidesLenght = slides.length;
 
 
 // Setting up the templates
@@ -154,7 +182,16 @@ form.addEventListener("submit",submitHandle)
 
 function submitHandle(event){
     event.preventDefault();
+    radio = document.querySelectorAll("input[type='radio']");
+    checked = document.querySelectorAll("li input[type='radio']:checked + label");
+    for(let i=0; i<=(checked.length-1);i++){
+        if (checked.length<content.length){
+            alert("Please Select all the Options!");
+            ;
+        }
 
+        console.log(checked[i].innerHTML);
+    }
 }
 
 
