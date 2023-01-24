@@ -3,7 +3,7 @@ const content = [
     {question:"2. What is the largest desert in the world?", a:"Antarctica",b:"Sahara",c:"Arabian Desert",d:"Gobi Desert", answer:"Antarctica"},
     {question:"3. What is a material that will not carry an electrical charge called?", a:"Conductor",b:"Semicondoctor",c:"Insulator",d:"None of the above", answer:"Insulator"},
     {question:"4. Roughly how long does it take for the Sun’s light to reach Earth?", a:"8 Days",b:"8 Hours",c:"8 minutes",d:"8 seconds", answer:"8 minutes"},
-    {question:"5. How many bones do sharks have in their bodies?", a:"0 Bones",b:"201 Bones",c:"400 Bones",d:"98 Bones", answer:"0"}
+    {question:"5. How many bones do sharks have in their bodies?", a:"0 Bones",b:"201 Bones",c:"400 Bones",d:"98 Bones", answer:"0 Bones"}
 ]
 
 const questions = document.querySelectorAll(".question");
@@ -46,7 +46,7 @@ const startButton = document.getElementById("start");
 const progress = document.querySelector('.carousel-progress-bar');
 const base = document.querySelector('.base');
 
-
+const score = document.querySelector(".score")
 
 //Calculating what width the Progress Bar will have depending on the child elements i.e. Number of Questions
 const baseWidth = base.offsetWidth;
@@ -127,6 +127,9 @@ next.addEventListener('click',e=>{
         let progressWidth = progress.offsetWidth;
         progress.style.width = progressWidth + addToProgress+'px';
     }
+    
+
+
 })
 
 prev.addEventListener('click', e=>{
@@ -184,15 +187,27 @@ function submitHandle(event){
     event.preventDefault();
     radio = document.querySelectorAll("input[type='radio']");
     checked = document.querySelectorAll("li input[type='radio']:checked + label");
-    for(let i=0; i<=(checked.length-1);i++){
-        if (checked.length<content.length){
-            alert("Please Select all the Options!");
-            ;
-        }
-
-        console.log(checked[i].innerHTML);
+    if (checked.length<content.length){
+        return alert("Please Select all the Options!");
     }
+    let marks_scored=0;
+    for(let i = 0; i<=(content.length-1);i++){
+        if(checked[i].innerHTML===content[i].answer){
+            marks_scored = marks_scored+1;
+        }
+    }
+
+    let final_score = marks_scored+" out of "+checked.length+"!"
+    score.innerHTML = final_score;
+
+    let final_screen = document.querySelector(".thank_you")
+    base.classList.add("blur");
+    final_screen.classList.add("visible")
+
+    
+
 }
+
 
 
 

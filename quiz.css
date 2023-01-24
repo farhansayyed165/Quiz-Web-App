@@ -11,6 +11,7 @@
     box-sizing: border-box;
 }
 
+
 :root{
     --clr-bg: #D8F3DC;
     --clr-text: black;
@@ -41,19 +42,25 @@ body{
 
 .base{
     display: block;
-    transition:  display 200ms ease-in;
-    font-size: 1.3rem;
     position:  relative;
     background-color: white;
     box-shadow: 5px 3px 20px rgb(0 0 0/0.2);
     border-radius: 1%;
     overflow: hidden;
-    min-height: 25em;
-    min-width: 40em;
+    transition: all 200ms ease-in;
     pointer-events: none;
     /* display: none; */
+    filter: blur(0px);
+    font-size: 1.3rem;
+    min-height: 25em;
+    min-width: 40em;
 }
 
+
+.blur{
+    filter: blur(8px);
+    pointer-events: none;
+}
 
 .carousel-progress {
     background: rgb(235, 235, 235);
@@ -182,24 +189,41 @@ li input[type="radio"]:checked + label:before{
 
 .startDiv{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: absolute;
     margin: 0;
     padding: 0;
+    top: 0;
+}
+
+.instructions{
+    position: absolute;
+    top: 0;
+    font-size: 1.3rem;
+    font-family: "lato",sans-serif;
+    padding: 1em;
+    margin: 1em 1em;
+    justify-self: flex-start;
+    align-self: flex-start;
+
 }
 
 #start{
     pointer-events: all;
-    padding: 0.5em;
+    margin: 1em 0.5em 1.5em 0.5em;
+    padding: 0.5em ;
     border: none;
     font-size: 2rem;
     font-family: 'Lato',sans-serif;
     letter-spacing: 0.1em;
-    border-radius: 10%;
+    border-radius: 10px;
     background-color: var(--clr-btn);
     color: white;
     transition: 250ms ease-in;
+    position: absolute;
+    bottom: 0;
 }
 #start:hover{
     background-color: white;
@@ -207,7 +231,7 @@ li input[type="radio"]:checked + label:before{
     border: 1px solid var(--clr-btn);
     pointer-events:all;
     cursor: pointer;
-    border-radius: 18%;
+    border-radius: 12px;
 }
 
 
@@ -340,12 +364,13 @@ li input[type="radio"]:checked + label:before{
     margin-bottom: 70px;
 }
 
-.Submit[visible="false"]{
+[visible="false"]{
     pointer-events: none;
     opacity: 0;
+    position: absolute  ;
 }
 
-.Submit[visible="true"]{
+[visible="true"]{
     pointer-events: all;
     opacity: 1;
 }
@@ -362,14 +387,92 @@ li input[type="radio"]:checked + label:before{
 
 
 
+
+
+
+
+.thank_you{
+    transform: translate(0, 10%) scale(0.1);
+    position: absolute;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    flex-direction: column;
+    font-family: 'Lato',sans-serif;
+    background-color: white;
+    border-radius: 10px;
+    width: 40rem;
+    transition: all 400ms;
+    box-shadow: 5px 3px 20px rgb(0 0 0/0.2);
+    opacity: 0;
+}
+
+
+/* .final_progress{
+    width: 100%;
+    
+}
+
+.final_progress_bar{
+    margin-bottom: 12px;
+    background: var(--clr-progress);
+    height: 10px;
+    transition: width 400ms ease;
+    width: 100%;
+} */
+
+
+.thank_you h3{
+    font-size: 2rem;
+}
+
+.margin_padding{
+    margin-block: 1.5rem;
+    margin-inline: 4rem;
+    letter-spacing: 1px;
+}
+
+.thank_you p{
+    font-size: 1.3rem;
+}
+
+.score{
+    margin-inline: 6rem;
+    margin-bottom: 4rem;
+}
+
+.restart{
+    font-family: "Lato",sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    background-color: var(--clr-bg);
+    border: none;
+    height: 50px;
+    
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: all 300ms ;
+}
+
+.restart:hover{
+    background-color: var(--clr-btn);
+    color: white;
+    cursor: pointer;
+}
+
+
+
+.visible{
+    transform:translate(0, 10%)  scale(1);
+    opacity: 1;
+}
+
+
+
+
 /* Media Queries */
 @media (max-width: 860px) {
     .base{
         font-size: 1rem;
     }
-}
-
-
-li input[type="radio"]:checked + label{
-    outline: red;
 }

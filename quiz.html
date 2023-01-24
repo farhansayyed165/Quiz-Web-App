@@ -13,7 +13,7 @@
     </div>
 
     
-    <div  class="base">
+    <div  class="base width ">
         <div class="carousel-progressopacity">
             <div class="carousel-progress-bar"></div>
         </div>
@@ -26,7 +26,12 @@
         
         <form class="AllTemplates" id="form">
             <div display="True"class="startDiv Template current">
-        
+                <div class="instructions">
+                    <p>Instructions for the Quiz are:</p>
+                    <p>1. Select one option for every question</p>
+                    <p>2. You won't be allowed to submit your answers until you select one option for every question</p>
+                    <p>3. Results will be displayed after you submit the question</p>
+                </div>
                 <button id="start" type="button">Start</button>
             </div>
             <!-- <form> -->
@@ -203,10 +208,22 @@
             <!-- </form> -->
                 
             </form>
-            
+        </div>
 
-            <script src="quiz.js"></script>
-        
-    </div>
+        <div class="thank_you" visible="true">
+            <div class="final_progress">
+                <div class="final_progress_bar"></div>
+            </div>
+
+            <h3 class="margin_padding">Thanks for taking the quiz!</h3>
+            <p class=" margin_padding">Your Score is:</p>
+            <p class="ScoreBefore margin_padding"></p>
+            <p class="score  margin_padding">0</p>
+
+            <button type="submit" class="restart">Restart Test</button>
+        </div>
+
+
+        <script src="quiz.js"></script>
 </body>
 </html>
