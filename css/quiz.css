@@ -13,17 +13,29 @@
 
 
 :root{
+    --clr-bg: #FFE1A8;
+    --clr-text: black;
+    --clr-op: #C9CBA3;
+    --clr-btn: #E26D5C;
+    --clr-progress:#723D46;
+}
+/* :root{
     --clr-bg: #D8F3DC;
     --clr-text: black;
     --clr-op: #95D5B2;
     --clr-btn: #1B4332;
     --clr-progress:#52B788;
-}
+} */
 
 body{
     margin: 0;
     padding:0;
-    background: var(--clr-bg);
+
+    background-color: var(--clr-bg);
+    /* background-image: url("../public/center.jpg");
+    background-repeat: no-repeat; */
+    
+
     /* min-height: 90vh; */
     min-width: 310px;
     display: flex;
@@ -31,6 +43,12 @@ body{
     align-items: center;
     flex-direction: column;
 }
+
+body::before{
+    content: "";
+
+}
+
 
 .header{
     text-align: center;
@@ -447,14 +465,20 @@ li input[type="radio"]:checked + label:before{
 }
 
 .score{
-    margin-inline: 6rem;
-    margin-bottom: 4rem;
+    /* margin-inline: 6rem;
+    margin-bottom: 4rem; */
 }
 
 .sc{
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     text-align: center;
+
     
+}
+
+.ScoreBefore{
+    margin-inline: 6rem;
+    margin-bottom: 4rem;
 }
 
 .restart{
