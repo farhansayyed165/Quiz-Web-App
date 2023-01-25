@@ -73,7 +73,7 @@ body{
     margin-bottom: 12px;
     background: var(--clr-progress);
     height: 10px;
-    transition: width 400ms ease;
+    transition: width 200ms ease;
     width: 0px;
 }
 
@@ -291,7 +291,7 @@ li input[type="radio"]:checked + label:before{
 .previous{
     /* position: absolute; */
     left: 0;
-
+    transition: all 200ms ease-in;
 
 }
 
@@ -358,22 +358,32 @@ li input[type="radio"]:checked + label:before{
     bottom: 0;
     background-color: var(--clr-btn);
     color: white;
-    transition: 500ms linear;
+    transition: 300ms linear;
     width: 110%;
     border: 1px solid var(--clr-btn);
     margin-bottom: 70px;
+
 }
 
 [visible="false"]{
     pointer-events: none;
     opacity: 0;
-    position: absolute  ;
+    position: absolute;
 }
 
 [visible="true"]{
     pointer-events: all;
     opacity: 1;
 }
+
+.Submit[visible="false"]{
+    transform: translate(0,100%);
+}
+
+.Submit[visible="true"]{
+    transform: translate(0,0);
+}
+
 
 .Submit:hover{
     background-color: white;
@@ -439,6 +449,12 @@ li input[type="radio"]:checked + label:before{
 .score{
     margin-inline: 6rem;
     margin-bottom: 4rem;
+}
+
+.sc{
+    font-size: 1.3rem;
+    text-align: center;
+    
 }
 
 .restart{

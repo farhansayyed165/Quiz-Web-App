@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice HTML question</title>
-    <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" href="css/quiz.css">
 </head>
 <body> 
     <div class="header">
@@ -19,7 +19,7 @@
         </div>
         <div class="option_footer">
             <button class="next btn">Next</button>
-            <button class="previous btn">Previous</button>
+            <button class="previous btn" visible="True">Previous</button>
         </div>
         
         
@@ -27,7 +27,7 @@
         <form class="AllTemplates" id="form">
             <div display="True"class="startDiv Template current">
                 <div class="instructions">
-                    <p>Instructions for the Quiz are:</p>
+                    <p>1 Instructions for the Quiz are:</p>
                     <p>1. Select one option for every question</p>
                     <p>2. You won't be allowed to submit your answers until you select one option for every question</p>
                     <p>3. Results will be displayed after you submit the question</p>
@@ -217,13 +217,13 @@
 
             <h3 class="margin_padding">Thanks for taking the quiz!</h3>
             <p class=" margin_padding">Your Score is:</p>
-            <p class="ScoreBefore margin_padding"></p>
-            <p class="score  margin_padding">0</p>
+            <strong><p class="sc score  margin_padding">0</p></strong>
+            <strong><p class="sc ScoreBefore margin_padding">sfjskfs</p></strong>
 
             <button type="submit" class="restart">Restart Test</button>
         </div>
 
 
-        <script src="quiz.js"></script>
+        <script src="js/quiz.js"></script>
 </body>
 </html>
