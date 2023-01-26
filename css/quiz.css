@@ -537,8 +537,6 @@ li input[type="radio"]:checked + label:before{
 }
 
 
-
-
 /* Media Queries */
 @media (max-width: 860px) {
     .base{

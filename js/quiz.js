@@ -155,7 +155,6 @@ prev.addEventListener('click', e=>{
 
     }
 
-    //set
     if(currentSlide === SecondSlide){
         nextMult--;
         prevMult--;
@@ -174,7 +173,6 @@ prev.addEventListener('click', e=>{
 
 yes.addEventListener('click',()=>{
     submit.setAttribute("visible","true");
-    // prev.style.display = 'none';
     prev.setAttribute("visible", "false")
     yes.style.display = 'none';
     no.innerHTML = "Go Back";
@@ -210,10 +208,9 @@ function submitHandle(event){
     radio = document.querySelectorAll("input[type='radio']");
     checked = document.querySelectorAll("li input[type='radio']:checked + label");
     if (checked.length<content.length){
-        warning.classList.add("visible")
-        warning.setAttribute("visible","true")
+        warning.classList.add("visible");
+        warning.setAttribute("visible","true");
         return ;
-        // return alert("Please choose one answer from each question!");
     }
     let marks_scored=0;
     for(let i = 0; i<=(content.length-1);i++){
@@ -233,7 +230,7 @@ function submitHandle(event){
 
     }
 
-    let final_score = marks_scored+" out of "+checked.length+"!"
+    let final_score = marks_scored+" out of "+checked.length+"!";
     score.innerHTML = final_score;
 
     let final_screen = document.querySelector(".thank_you")
