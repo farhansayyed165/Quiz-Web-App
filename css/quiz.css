@@ -534,10 +534,7 @@ li input[type="radio"]:checked + label:before{
     color: var(--clr-text);
     cursor: pointer;
     border: 2px solid var(--clr-btn);
-    
 }
-
-
 
 
 
