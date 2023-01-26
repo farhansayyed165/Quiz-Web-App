@@ -36,8 +36,9 @@ const next = document.querySelector('.next');
 const prev = document.querySelector('.previous');
 const submit = document.querySelector('.Submit');
 const form = document.querySelector("#form");
-const yes = document.querySelector(".yes")
-const no = document.querySelector(".no")
+const yes = document.querySelector(".yes");
+const no = document.querySelector(".no");
+const restart = document.querySelector(".restart");
 
 const start = document.querySelector(".startDiv");
 const startButton = document.getElementById("start");
@@ -46,7 +47,7 @@ const startButton = document.getElementById("start");
 const progress = document.querySelector('.carousel-progress-bar');
 const base = document.querySelector('.base');
 
-const score = document.querySelector(".score")
+const score = document.querySelector(".score");
 
 //Calculating what width the Progress Bar will have depending on the child elements i.e. Number of Questions
 const baseWidth = base.offsetWidth;
@@ -195,7 +196,12 @@ no.addEventListener('click',()=>{
 
 
 
-
+const ok = document.querySelector(".warning button");
+const warning = document.querySelector(".warning");
+ok.addEventListener("click",()=>{
+    warning.classList.remove("visible")
+    warning.setAttribute("visible","false")
+})
 
 form.addEventListener("submit",submitHandle)
 
@@ -203,9 +209,12 @@ function submitHandle(event){
     event.preventDefault();
     radio = document.querySelectorAll("input[type='radio']");
     checked = document.querySelectorAll("li input[type='radio']:checked + label");
-    // if (checked.length<content.length){
-    //     return alert("Please choose one answer from each question!");
-    // }
+    if (checked.length<content.length){
+        warning.classList.add("visible")
+        warning.setAttribute("visible","true")
+        return ;
+        // return alert("Please choose one answer from each question!");
+    }
     let marks_scored=0;
     for(let i = 0; i<=(content.length-1);i++){
         if(checked[i].innerHTML===content[i].answer){
@@ -228,9 +237,14 @@ function submitHandle(event){
     score.innerHTML = final_score;
 
     let final_screen = document.querySelector(".thank_you")
+    final_screen.setAttribute("visible","true")
     base.classList.add("blur");
     final_screen.classList.add("visible")
 }
+
+restart.addEventListener('click',()=>{
+    document.location.reload()
+});
 
 
 
