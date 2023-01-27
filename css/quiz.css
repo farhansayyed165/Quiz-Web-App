@@ -45,8 +45,16 @@ body{
 }
 
 
-h3{
+.h3_font{
     color: var(--clr-text);
+    font-size: clamp(18px,2.5vw,1.5rem);
+    font-family: "lato",sans-serif;
+}
+
+.p_font{
+    color: var(--clr-text);
+    font-size: clamp(14px,2vw,1.2rem);
+    font-family: "lato",sans-serif;
 }
 
 
@@ -70,8 +78,8 @@ h3{
     /* display: none; */
     filter: blur(0px);
     font-size: 1.3rem;
-    min-height: 25em;
-    min-width: 40em;
+    height: 25em;
+    width: 40em;
 }
 
 
@@ -87,7 +95,6 @@ h3{
   }
   
 .carousel-progress-bar {
-    /* margin-top: 15px; */
     margin-bottom: 12px;
     background: var(--clr-progress);
     height: 10px;
@@ -119,24 +126,22 @@ form{
     position: absolute;
     margin-top:40px;
     font-size: 1.3rem;
-    min-height: 25em;
-    min-width: 39em;
+    height: 25em;
+    width: 39em;
     pointer-events: none;
     /* left:0; */
     /* background-color: rgb(255, 197, 197); */
 }
 
 .question{
-    font-family: 'Lato', sans-serif;
-    font-size: 20px;
     margin: 10px;
     margin-left:20px;
 }
 
 .options{
     font-family: 'Lato', sans-serif;
-    width: inherit;
-    height: inherit;
+    /* width: inherit;
+    height: inherit; */
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -146,9 +151,7 @@ form{
 .option{
     margin-inline: 10px;
     margin-block: 20px;
-    
-    padding-inline: 0.5em;
-   
+    padding-inline: 0.5em;  
 }
 
 
@@ -169,7 +172,6 @@ li input[type="radio"]{
 
 .option-text{
     cursor: pointer;
-    font-size: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -219,8 +221,6 @@ li input[type="radio"]:checked + label:before{
 .instructions{
     position: absolute;
     top: 0;
-    font-size: 1.3rem;
-    font-family: "lato",sans-serif;
     padding: 1em;
     margin: 1em 1em;
     justify-self: flex-start;
@@ -233,7 +233,7 @@ li input[type="radio"]:checked + label:before{
     margin: 1em 0.5em 1.5em 0.5em;
     padding: 0.5em ;
     border: none;
-    font-size: 2rem;
+    font-size: clamp(1.5rem,1.5vw,2rem);
     font-family: 'Lato',sans-serif;
     letter-spacing: 0.1em;
     border-radius: 10px;
@@ -425,7 +425,7 @@ li input[type="radio"]:checked + label:before{
     border-radius: 10px;
     outline: 2px solid var(--clr-progress) ;
     box-shadow: 5px 3px 20px rgb(0 0 0/0.2);
-    font-size: 1.3rem;
+    font-size: clamp(0.8rem,2vw,1.3rem);
     font-family: 'Lato';
     background-color: white;
     color: var(--clr-text);
@@ -448,7 +448,7 @@ li input[type="radio"]:checked + label:before{
 }
 
 .ok{
-    font-size: 1.4rem;
+    font-size: clamp(1rem,1.5vw,1.5rem);
     letter-spacing: 3px;
     bottom: 0;
     align-self: center;
@@ -538,8 +538,77 @@ li input[type="radio"]:checked + label:before{
 
 
 /* Media Queries */
-@media (max-width: 860px) {
+@media (min-width:690px) and (max-width: 880px) {
     .base{
         font-size: 1rem;
+        width: 690px;
+        /* min-width: 20em; */
+        /* min-height: 480px; */
+    }
+    .h3_font {
+        width: 690px;
+    }
+    .p_font{
+        width: 690px;
+    }
+    .instructions{
+        width: 690px;
+
+    }
+    #start{
+        bottom: 100px;
+    }
+    .Template{
+        width: 690px;
+        height: 480px;
+    }
+    .btn{
+        bottom: 50px;
+    }
+    .Submit{
+        bottom: 50px;
+    }
+    .ok{
+        /* margin-block: 0; */
+        bottom: 0;
+    }
+}
+
+@media only screen and (min-width:300px) and (max-width:690px){
+    .base{
+        width: 300px;
+    }
+    .Template{
+        width: 300px;
+        height: 500px;
+    }
+    .h3_font {
+        width: 280px;
+    }
+    .p_font{
+        font-size: 1rem;
+        width: 280px;
+    }
+
+    .btn{
+        font-size: 14px;
+    }
+    .confirm{
+        font-size: 16px;
+    }
+    .thank_you{
+        width: 20rem;
+    }
+    .h3_font{
+        font-size: 18px;
+        margin-inline: 10px;
+    }
+    #h3_heading{
+        align-self: center;
+        /* margin-inline-start: 10px; */
+        font-size: 21px;
+    }
+    .margin_padding{
+        margin-inline: 4em;
     }
 }
