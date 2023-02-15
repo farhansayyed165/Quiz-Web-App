@@ -11,3 +11,4 @@ This Project uses Javascript to detect how many slides are there and with the he
  
  ### Upon Submiting
  If you haven't sleected one option from each question and click the <strong>"submit"</strong> button, an error message will be propmted to you saying "Please select one option from each question". If select one option from each question and then click on the <strong>"submit"</strong> button, the result screen will popup showing you your score  
+ 
