@@ -243,15 +243,15 @@ function submitHandler(event){
         }
     }
 
-    if(marks_scored<=2){
+    if(marks_scored<2){
         document.querySelector(".ScoreBefore").innerHTML = "Better Luck Next Time :(";
     }
-    if(marks_scored===checked.length){
+    else if(marks_scored===checked.length){
         document.querySelector(".ScoreBefore").innerHTML = "🥳You did it! Full marks";
     }
     else{
         document.querySelector(".ScoreBefore").innerHTML = "You did well!👍";
-
+        console.log(marks_scored);
     }
 
     let final_score = marks_scored+" out of "+checked.length+"!";
