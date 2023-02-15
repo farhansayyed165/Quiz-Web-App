@@ -1,6 +1,9 @@
 # Quiz Web App
 This Quiz Web App was made as a starter project for learning basic Javascript and CSS for styling an HTML page. This project does not uses any dependecies or libraries. 
 
+## The Quiz App is Live!!
+I've hosted the quiz website! Go visit it at: https://farhansayyed165.github.io/Quiz-Web-App/
+
 <img src="https://github.com/farhansayyed165/Quiz-Web-App/blob/main/Readme_img_nvs.png">
 
 <br>
