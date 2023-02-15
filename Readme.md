@@ -4,13 +4,14 @@ This Quiz Web App was made as a starter project for learning basic Javascript an
 ## The Quiz App is Live!!
 I've hosted the quiz website! Go visit it at: https://farhansayyed165.github.io/Quiz-Web-App/
 
-<img src="https://github.com/farhansayyed165/Quiz-Web-App/blob/main/Readme_img_nvs.png">
 
 <br>
 <br>
 
 ## Overview on the working
 This Project uses Javascript to detect how many slides are there and with the help of transform and translateY, a CSS styling property, we can set it to n number of times the base/container width, arraning it in a carousel fashion.
+
+<img src="https://github.com/farhansayyed165/Quiz-Web-App/blob/main/Readme_img_nvs.png">
 
 ### UI/UX
  Once you click <strong>start</strong>, you are presented with one question and four radio inputs (radio inputs are normal checkboxes but you can only select one for every n number of children radio inputs). You can click the <strong>"next"</strong> button to cycle through the five questions. You can also click on the <strong>"previous"</strong> button to go to the previous question. 
