@@ -3,6 +3,9 @@ This Quiz Web App was made as a starter project for learning basic Javascript an
 
 <img src="https://github.com/farhansayyed165/Quiz-Web-App/blob/main/Readme_img_nvs.png">
 
+<br>
+<br>
+
 ## Overview on the working
 This Project uses Javascript to detect how many slides are there and with the help of transform and translateY, a CSS styling property, we can set it to n number of times the base/container width, arraning it in a carousel fashion.
 
